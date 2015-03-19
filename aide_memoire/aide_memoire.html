@@ -1,0 +1,34 @@
+<!-- pour renvoyer la page 
+========================= -->
+{{ asset('la page') }}
+<!-- pour donner le chemain de la page 
+==================================== --> 
+{{ path ('lapage') }}
+<!-- pour la création d'un bundle
+================================= --> 
+php app/console generat:bundle
+<!-- pour la inclure une page dans le twig --> 
+{% include ::lechemain/lapage.html.twig %}
+
+<!-- pour savoir les routes et chemin pour les path -->
+dans le terminal
+
+php app/console router:debug
+
+pour attribuer un role admin aller dans le terminal et tapper cette ligne de commande
+php app/console fos:user:promote 
+ensuite le nom de l'utilisateur: Playerone
+ensuite: ROLE_USER
+
+<!-- Commandes git -->
+Dans le terminal, allez dans le dossier du Projet Agence_Projet-Symfony
+
+git status <!-- Permet de voir les fichiers qui ont étés modifiés, supprimés ou ajoutés -->
+
+<!-- Si fichier ajoutés dans le projet -->
+git add . <!-- Ajoute l'ensemble des fichiers nouvellement crées -->
+git commit -am "Ton_message" <!-- Enregistre localement sur git l'ensemble des modifications -->
+git pull <!-- Permet de récupérer les modifications faites par une autre personne sur le projet sur git -->
+git push <!-- Envoie les modifications sur le git -->
+
+
