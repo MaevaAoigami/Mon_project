@@ -1,0 +1,18 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body -%}
+	{% for flashMessage in app.session.flashbag.get('success_contact') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('error_contact') %}
+        <div class="alert alert-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+	{{ form(form) }}
+
+{% endblock %}

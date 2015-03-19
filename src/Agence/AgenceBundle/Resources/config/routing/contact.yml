@@ -1,0 +1,8 @@
+contact:
+    path:     /
+    defaults: { _controller: "AgenceBundle:Contact:new" }
+
+contact_create:
+    path:     /create
+    defaults: { _controller: "AgenceBundle:Contact:create" }
+    methods:  POST

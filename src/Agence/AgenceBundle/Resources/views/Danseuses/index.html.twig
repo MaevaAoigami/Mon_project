@@ -1,0 +1,65 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body -%}
+    <h1>Liste des danseuses</h1>
+
+        <ul>
+            <li>
+                <a href="{{ path('pages_danseuses_new') }}">
+                    Créer votre profil
+                </a>
+            </li>
+        </ul>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Disponibilité</th>
+                <th>Categorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% if entities|length == 0 %}
+            <tr>
+                <td colspan="6">Aucune danseuse dans votre liste.</td>
+            </tr>
+        {% endif %}
+
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.prix }}</td>
+                <td>
+                    {% if entity.disponible == 0 %}
+                        Non !
+                    {% else %}
+                        Oui !
+                    {% endif %} 
+                </td>
+                <td>{{ entity.categories }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('pages_danseuses_show', { 'id': entity.id }) }}" class="bouton" >Voir le profil</a>
+                    </li>
+                    <li>
+                        <a href ="{{ path('pages_danseuses_edit', { 'id': entity.id }) }}" class="bouton">Modifier</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('danseuse_galerie', { 'danseuse_id' : entity.id }) }}" class="bouton">Ajouter une photo dans votre galerie</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        
+    {% endblock %}

@@ -1,0 +1,25 @@
+admin_danseuses:
+    path:     /
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:index" }
+
+admin_danseuses_show:
+    path:     /admin/{id}/show
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:show" }
+
+admin_danseuses_edit:
+    path:     /admin/{id}/edit
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:edit" }
+
+admin_danseuses_update:
+    path:     /admin/{id}/update
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:update" }
+    methods:  [POST, PUT]
+
+admin_danseuses_delete:
+    path:     /admin/{id}/delete
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:delete" }
+    methods:  [POST, DELETE]
+
+admin_danseuses_validate:
+    path:     /admin/{id}/validate
+    defaults: { _controller: "AgenceBundle:DanseusesAdmin:validate" }

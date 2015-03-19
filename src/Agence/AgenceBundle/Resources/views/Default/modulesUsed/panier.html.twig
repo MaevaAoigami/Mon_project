@@ -1,0 +1,16 @@
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Votre demande</li>
+        <li>
+            <a href="{{ path('panier') }}">
+                {% if articles == 0 %}
+                    Aucune danseuse dans votre commande
+                {% elseif articles == 1 %}
+                    Vous avez 1 danseuse dans votre demande
+                {% else %}
+                    {{ articles }} danseuses dans votre demande
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+</div>

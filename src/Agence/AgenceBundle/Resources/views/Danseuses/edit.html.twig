@@ -1,0 +1,61 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body -%}
+    <h1>Danseuses edit</h1> 
+     {{form_errors(edit_form) }}
+    <form action="{{ path('pages_danseuses_update', { 'id' : entity.id }) }}" method="POST" {{ form_enctype(edit_form) }}>
+        {# {{ form(edit_form) }} #}
+    <div>
+        {{ form_label(edit_form.nom) }}
+        {{ form_errors(edit_form.nom) }}
+        {{ form_widget(edit_form.nom) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.description) }}
+        {{ form_errors(edit_form.description) }}
+        {{ form_widget(edit_form.description) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.prix) }}
+        {{ form_errors(edit_form.prix) }}
+        {{ form_widget(edit_form.prix) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.disponible) }}
+        {{ form_errors(edit_form.disponible) }}
+        {{ form_widget(edit_form.disponible) }}
+    </div>
+    <div>
+        {{ form_label(edit_form.image) }}
+        {{ form_errors(edit_form.image) }}
+        {{ form_widget(edit_form.image) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.tva) }}
+        {{ form_errors(edit_form.tva) }}
+        {{ form_widget(edit_form.tva) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.categories) }}
+        {{ form_errors(edit_form.categories) }}
+        {{ form_widget(edit_form.categories) }}
+    </div>
+
+    {{ form_rest(edit_form) }}
+
+    </form>
+    
+    <ul class="record_actions">
+        <li>
+        <a href="{{ path('pages_danseuses') }}">
+            Back to the list
+        </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

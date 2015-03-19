@@ -1,0 +1,34 @@
+pages_danseuses:
+    path:     /
+    defaults: { _controller: "AgenceBundle:Danseuses:index" }
+
+pages_danseuses_show:
+    path:     /{id}/show
+    defaults: { _controller: "AgenceBundle:Danseuses:show" }
+
+pages_danseuses_new:
+    path:     /new
+    defaults: { _controller: "AgenceBundle:Danseuses:new" }
+
+pages_danseuses_create:
+    path:     /create
+    defaults: { _controller: "AgenceBundle:Danseuses:create" }
+    methods:  POST
+
+pages_danseuses_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AgenceBundle:Danseuses:edit" }
+
+pages_danseuses_update:
+    path:     /{id}/update
+    defaults: { _controller: "AgenceBundle:Danseuses:update" }
+    methods:  [POST, PUT]
+
+pages_danseuses_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AgenceBundle:Danseuses:delete" }
+    methods:  [POST, DELETE]
+
+pages_danseuses_validate:
+    path:     /{id}/validate
+    defaults: { _controller: "AgenceBundle:Danseuses:validate" }

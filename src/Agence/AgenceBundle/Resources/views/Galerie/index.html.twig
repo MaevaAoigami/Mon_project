@@ -1,0 +1,27 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body -%}
+    <h1>Galerie list</h1>
+
+    <div class="container">
+    	<div class="span9">
+    		<a href="{{ path('danseuse_galerie_new', { 'danseuse_id' : danseuse_id }) }}">Ajouter une photo</a>
+    	</div>
+    	<section>
+			<ul class="lb-album">
+
+				{% for galerie in entities %}
+				<li>
+
+					<a href="#image-1">
+						<img style="width:200px" src="{{ asset(galerie.getAssetPath) }}" alt="image01">
+					</a>
+					<div>
+						<a href="#">DELETE</a>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+admin_categories:
+    path:     /
+    defaults: { _controller: "AgenceBundle:Categories:index" }
+
+admin_categories_show:
+    path:     /{id}/show
+    defaults: { _controller: "AgenceBundle:Categories:show" }
+
+admin_categories_new:
+    path:     /new
+    defaults: { _controller: "AgenceBundle:Categories:new" }
+
+admin_categories_create:
+    path:     /create
+    defaults: { _controller: "AgenceBundle:Categories:create" }
+    methods:  POST
+
+admin_categories_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AgenceBundle:Categories:edit" }
+
+admin_categories_update:
+    path:     /{id}/update
+    defaults: { _controller: "AgenceBundle:Categories:update" }
+    methods:  [POST, PUT]
+
+admin_categories_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AgenceBundle:Categories:delete" }
+    methods:  [POST, DELETE]

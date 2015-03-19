@@ -1,0 +1,32 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+	<div class="span3">
+        {% include '::modulesUsed/navigation.html.twig' %}
+    </div>
+
+    <div class="span9">
+        <div class="row">
+            <div class="span5">
+                {% for event in evenement %}
+                {% if event|length != 0 %}
+                <img src="{{ asset(event.image.AssetPath) }}" alt="{{ event.image.name }}">
+            </div>
+
+            <div class="span4">
+                <h4>{{ event.name }}</h4>
+                <p>{{ event.location }}</p>
+                <p>{{ event.dateHour|date('Y-m-d H:i:s') }}</p>
+            </div>
+            {% else %}
+                Il n'y a pas d'événements pour le moment.
+            {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

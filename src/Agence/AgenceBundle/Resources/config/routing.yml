@@ -1,0 +1,88 @@
+agence_admin_evenements:
+    resource: "@AgenceBundle/Resources/config/routing/evenements.yml"
+    prefix:   /admin/evenements
+
+agence_admin_categories:
+    resource: "@AgenceBundle/Resources/config/routing/categories.yml"
+    prefix:   /admin/categories
+
+agence_pages_danseuses:
+    resource: "@AgenceBundle/Resources/config/routing/danseuses.yml"
+    prefix:   /pages/danseuses
+
+agence_admin_danseuses:
+    resource: "@AgenceBundle/Resources/config/routing/danseusesAdmin.yml"
+    prefix:   /admin/danseuses
+
+agence_danseuse_galerie:
+    resource: "@AgenceBundle/Resources/config/routing/galerie.yml"
+    prefix:   /pages/danseuses/{danseuse_id}/galerie
+
+contact:
+    resource: "@AgenceBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact
+
+
+home:
+    path:     /
+    defaults: { _controller: AgenceBundle:Produits:home }
+
+categorieProduits:
+    path:     /categorie/{categorie}
+    defaults: { _controller: AgenceBundle:Produits:produits }
+
+produits:
+    path:     /danseuses
+    defaults: { _controller: AgenceBundle:Produits:produits }
+
+presentation:
+    path:     /presentation/{id}
+    defaults: { _controller: AgenceBundle:Presentation:presentation }
+
+panier:
+    path:     /panier
+    defaults: { _controller: AgenceBundle:Panier:panier }
+
+ajouter:
+    path:     /ajouter/{id}
+    defaults: { _controller: AgenceBundle:Panier:ajouter }
+
+supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: AgenceBundle:Panier:supprimer }
+
+livraison:
+    path:     /panier/livraison
+    defaults: { _controller: AgenceBundle:Panier:livraison }
+
+validation:
+    path:     /panier/validation
+    defaults: { _controller: AgenceBundle:Panier:validation }
+
+validationCommande:
+    pattern: /api/banque/{id}
+    defaults: { _controller: AgenceBundle:Commande:validationCommande }
+
+livraisonAdresseSuppression:
+    path:     /panier/livraison/adresse/suppression/{id}
+    defaults: { _controller: AgenceBundle:Panier:adresseSuppression }
+
+test:
+    path:     /test
+    defaults: { _controller: AgenceBundle:Test:testFormulaire }
+
+evenements:
+    path:     /evenements
+    defaults: { _controller: AgenceBundle:EventPresentation:presentation }
+
+adminCommande:
+    pattern:  /admin/commande
+    defaults: { _controller: AgenceBundle:CommandeAdmin:commandes }
+
+adminShowFacture:
+    pattern:  /admin/show/facture/{id}
+    defaults: { _controller: AgenceBundle:CommandeAdmin:showFacture }
+
+apropos:
+    path:     /apropos
+    defaults: { _controller: AgenceBundle:Contact:aPropos }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Agence Opérationnel{% endblock %}</title>
+        <meta name="keywords" content="{% block motsClefs %} {% endblock %}">
+        <meta name="description" content="{% block description %} {% endblock %}">
+
+        <link rel="stylesheet" href="{{ asset ('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset ('css/bootstrap-responsive.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('css/font-awesome.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('css/style_lightbox.css') }}" />
+        <link rel="stylesheet" href="{{ asset ('css/demo_lightbox.css') }}" />
+
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/demo.css') }}" />
+        <script type="text/javascript" src="{{ asset ('js/modernizr.custom.86080.js') }}"></script>
+
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    <!-- ici se trouve la navigation
+    =============================== -->   
+    {% block nav %} 
+        {% include '::modulesUsed/nav.html.twig' %}
+    {% endblock %}
+
+    {% block connection %} 
+        {% include '::modulesUsed/utilisateurs.html.twig' %}
+    {% endblock %}
+    <!-- BODY
+    ========= -->
+    {% block utilisateurs %} 
+    {% endblock %}
+    
+    {% block body %} 
+    {% endblock %}
+
+
+
+
+
+    {% block footer %} 
+        {% include '::modulesUsed/footer.html.twig' %}
+    {% endblock %}
+
+    <script src="{{ asset ('js/jquery-1.10.0.min.js') }}"></script>
+    <script src="{{ asset ('js/bootstrap.js') }}"></script>
+
+    {% block javascripts %}{% endblock %}
+</body>
+</html>

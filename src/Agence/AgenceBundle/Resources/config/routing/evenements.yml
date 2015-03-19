@@ -1,0 +1,30 @@
+admin_evenements:
+    path:     /
+    defaults: { _controller: "AgenceBundle:Evenements:index" }
+
+admin_evenements_show:
+    path:     /{id}/show
+    defaults: { _controller: "AgenceBundle:Evenements:show" }
+
+admin_evenements_new:
+    path:     /new
+    defaults: { _controller: "AgenceBundle:Evenements:new" }
+
+admin_evenements_create:
+    path:     /create
+    defaults: { _controller: "AgenceBundle:Evenements:create" }
+    methods:  POST
+
+admin_evenements_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AgenceBundle:Evenements:edit" }
+
+admin_evenements_update:
+    path:     /{id}/update
+    defaults: { _controller: "AgenceBundle:Evenements:update" }
+    methods:  [POST, PUT]
+
+admin_evenements_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AgenceBundle:Evenements:delete" }
+    methods:  [POST, DELETE]

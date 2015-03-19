@@ -1,0 +1,8 @@
+utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+agence:
+    resource: "@AgenceBundle/Resources/config/routing.yml"
+    prefix:   /
+

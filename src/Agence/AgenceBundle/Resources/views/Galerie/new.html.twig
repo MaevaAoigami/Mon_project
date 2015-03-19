@@ -1,0 +1,15 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body -%}
+    <h1>Galerie creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('danseuse_galerie', { 'danseuse_id' : danseuse.id }) }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
